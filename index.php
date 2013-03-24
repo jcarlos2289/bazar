@@ -6,7 +6,7 @@
 		
 		$con= conectar();
 		
-		$consulta = "select _id, idTipoUser, pass from usuarios WHERE user='".$usuario."'";
+		$consulta = "select _id,  pass from usuarios WHERE user='".$usuario."'";
 		$resultado = mysql_query($consulta, $con);
 		
 		if($resultado == TRUE){
