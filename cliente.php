@@ -1,39 +1,12 @@
 <?php 
 	include('php/funciones.php'); 
-	if(isset($_POST['login'])&&isset($_POST['pass'])){
-		$usuario = $_POST['login'];
-		$pass = md5($_POST['pass']);
+	$iduser = existe_sesion();
 		
-		$con= conectar();
-		
-		$consulta = "select _id,  pass from usuarios WHERE user='".$usuario."'";
-		$resultado = mysql_query($consulta, $con);
-		
-		if($resultado == TRUE){
-			$contra = mysql_fetch_assoc($resultado);
-			if( $pass==$contra['pass']){
-				$id_sesion =  uniqid();
-				//llama a la pagina registrado y crea la sesion 
-				//Abrir/reactivar la sesion
-				session_start();
-				//Guardar 2 informaciones en la sesion
-				$_SESSION['usuario']=$usuario;
-				$_SESSION['id']=$id_sesion;
-				$_SESSION['iduser'] = $contra['_id'];
-				//$_SESSION['TipoUser'] =$contra['idTipoUser']; 
-				//es una matriz
-				header('Location: acciones.php');
-			}
-			else{  
-				header('Location: index.php?error=1') ;
-			}
-		}
-		else{
-			header('Location: index.php?error=2') ;
-		}
-		
-	}
-	else{
+	$con = conectar();
+	
+	$consulta = "SELECT * FROM clientes";
+	$resultado = mysql_query($consulta, $con); 
+	$accion = $_GET['accion'];
 	?>
 	<!DOCTYPE html>
 	<html lang = "es">
@@ -60,29 +33,17 @@
 				<section>
 					<form method="post" >
 						<div>
-							<div class="conte"><div class = "izq">Usuario:</div> <div class = "der"><input  type="text" name="login"></input></div></div>
+						<?php echo $accion;?>
+							<select name = "cliente"> 
+						<?php
 							
-							<div class="conte"><div class = "izq">Contraseña:</div> <div class = "der"><input  type="password" name="pass"></input></div></div>
-							
-							
-							
-							<input type="submit" value="Enviar"></input>
-							
-							
-							<?php  if(isset($_GET['error'])){
-								$er = $_GET['error'];
-								if($er ==1){
-									echo '</br><span style = "color:red;"> Combinación incorrecta</span> <br/>';
-									echo '<script>alert("Combinación incorrecta")</script>';
-								}
-								else if($er == 2){
-									echo '</br><span style = "color:red;"> Usuario No Existe</span> <br/>';
-									echo '<script>alert("Usuario No Existe")</script>';
-									echo $consulta;
+							if($resultado){
+								while($datos = mysql_fetch_assoc($resultado))
+								{
+									echo	"<option value =\"".$datos['_id']."\">". $datos['Nombre']." ".$datos['Apellido']."</option>" ;
 								}
 							}
-							
-							?>
+						?>						
 						</div>	
 					</form>
 				</section>
@@ -93,4 +54,3 @@
 		</body>
 	</html>
 	
-<?php } ?>			
