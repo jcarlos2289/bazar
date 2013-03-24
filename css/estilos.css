@@ -1,0 +1,268 @@
+/*Estilos para proyecto final PHP*/
+
+
+*{
+	margin: 0;
+	padding:0;
+	/*outline: 1px dotted red;*/
+	font-family:Segoe UI, sans serif;
+}
+
+body{
+	width: 85%;
+	margin: 5% auto;
+	background-color:#6fbbd6;
+}
+
+
+body > div{
+	background-color:fff;
+	-moz-border-radius:15px 15px 15px 15px;
+	-o-border-radius:15px 15px 15px 15px;
+	-ms-border-radius:15px 15px 15px 15px;
+	border-radius:15px 15px 15px 15px;
+}
+
+
+header{
+	-moz-border-radius:15px 15px 0em 0em;
+	-o-border-radius:15px 15px 0em 0em;
+	-ms-border-radius:15px 15px 0em 0em;
+	border-radius:15px 15px 0em 0em;
+	background-color: #1F96FF;
+	
+}
+
+header h1 {
+	font-weight: normal;
+	text-align: left;
+	color: #D1D1D1;
+	font-size: 40px;
+	line-height: 190%;
+	text-shadow: -5px 1px 5px #0B0833;
+	padding: 3px  15px;
+	
+}
+
+
+header h2 {
+	font-weight: normal;
+	font-style: italic;
+	text-align: left;
+	background-color: #075F91;
+	color: #FFFFFF;
+	font-size: 25px;
+	line-height: 190%;
+	text-shadow: -5.0px 1.0px 5.0px #16C4F0;
+	padding: 0px 15px;
+	
+	
+}
+
+section {
+	background-color: #c5cbcd; 
+	text-align:center;
+	padding:10px;
+	
+}
+
+section div {
+	float: auto;
+	text-align:left;
+}
+
+section h2{
+	font-weight: normal;
+	text-align: center;
+	/*background-color: #aaa;*/
+	color: #727272;
+	
+	font-size: 30.0px;
+	line-height: 145%;
+	text-shadow: 3.0px 3.0px 3.0px #fff;
+}
+
+.der{
+	/*float:left;
+	margin:auto;*/
+	text-align:left;
+}
+
+.izq{
+	/*float:left;
+	margin:auto;*/
+	text-align:left;
+}
+
+.conte{
+	margin:0px auto 0px auto;
+	padding: 5px;
+	width:60%;
+}
+
+.boton { 
+    margin: .5em auto; 
+    display: block; 
+    width: 150px; 
+    background: #ccc; 
+    text-align: center; 
+    text-decoration: none; 
+    color: black; 
+    padding: 10px; 
+    -moz-border-radius: 7px; 
+    border-radius: 7px; 
+    background: -moz-linear-gradient(#fff, #ddd); 
+    background: -webkit-gradient(linear, right top, right bottom, 
+	from(rgb(255,255,255)), to(rgb(230,230,230))); 
+    text-shadow: 0 1px 0 #fff; 
+    border: 1px solid rgba(0,0,0,0.1); 
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.3); 
+    -moz-box-shadow: 0 1px 1px rgba(0,0,0,0.3); 
+    box-shadow: 0 1px 1px rgba(0,0,0,0.3); 
+}
+.opcion { 
+	-webkit-box-shadow:9px 2px 2px 2px #333333;
+	-moz-box-shadow:9px 2px 2px 2px #333333;
+	-o-box-shadow:9px 2px 2px 2px #333333;
+	-ms-box-shadow:9px 2px 2px 2px #333333;
+	box-shadow:9px 2px 2px 2px #333333;
+	-webkit-border-radius:2em;
+	-moz-border-radius:2em;
+	-o-border-radius:2em;
+	-ms-border-radius:2em;
+	border-radius:2em;
+	background-color: #2d7b2c;
+	color: rgba(0, 0, 0, 100);
+	
+	-ms-border-radius:1.0em;
+	width:150px;
+	display:inline-table;
+	height: 150px;
+	margin: 25px 10px;
+	padding: 10px;
+	text-align:center;
+	
+}
+
+
+div> a {
+    display: table-cell;
+    vertical-align: middle;
+	color:#fff;
+	font-size:20px;
+	
+	
+	/*display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-box-pack: center;
+		
+		display: -moz-box;
+		-moz-box-orient: vertical;
+		-moz-box-pack: center;
+		
+		display: box;
+		box-orient: vertical;
+		box-pack: center;
+	*/
+}
+
+
+
+form {
+	background-color:#fff;
+	width:40%;
+	margin:10px auto;
+	padding: 10px;
+	-moz-border-radius:15px 15px 15px 15px;
+	-o-border-radius:15px 15px 15px 15px;
+	-ms-border-radius:15px 15px 15px 15px;
+	border-radius:15px 15px 15px 15px;
+}
+
+form div{
+	float:auto;
+	overflow:hidden;
+	text-align:center;
+	margin: auto;
+}
+
+form div div input, select{
+	width:100%;
+	margin: 0px ;
+	background-color:#ccc;
+	
+	
+}
+
+select, input{
+	font-size:18px;
+}
+
+table{
+	margin: auto;
+	width: 60%;
+}
+
+th{
+	font-weight: bold;
+	text-align: center;
+	background-color: #25825A;
+	color: #000;
+	font-size: 20px;
+	line-height: 100%;
+	width:50%;
+	padding:10px 0px;
+}
+
+
+td{
+	text-align: center;
+	background-color: #c8bb92;
+	color: #000;
+	font-size: 20px;
+	line-height: 100%;
+	width:50%;
+	padding:10px 0px;
+	
+}
+
+.tarde td{
+	background-color:#e35e66;
+}
+
+
+footer{
+	color:#fff;
+	line-height:200%;
+	height:40px;
+	text-align:center;
+	background-color: #075F91;
+	-moz-border-radius: 0px 0px 15px 15px;
+	-o-border-radius: 0px 0px 15px 15px;
+	-ms-border-radius: 0px 0px 15px 15px;
+	border-radius: 0px 0px 15px 15px;
+	
+	
+}
+
+footer div{
+	padding: 5px;
+}
+
+footer img {
+	width:20px;
+	height:20px;
+}
+
+.footer-segment {
+	float: left;
+	margin-right: 20px;
+	margin-left: 20px;
+	width: auto;
+	font-family:Segoe UI, cursive;
+	border: 0px solid #000000;
+	-moz-border-radius: 7px;
+	-webkit-border-radius: 7px;
+	padding: 10px;
+}
+
