@@ -26,14 +26,14 @@
 				<h2>Acciones permitidas</h2>
 			</header>
 			<section >
-				<div class="opcion"><a href="nuevoregistro.php">Registrar Saldo</a></div>
-				<div class="opcion"><a href="historicomes.php">Registrar Abono</a></div>
-				<div class="opcion"><a href="historicoservicio.php">Historial de Abonos</a></div></br>
+				<div class="opcion"><a href="nuevoregistro.php">Registrar</br>Saldo</a></div>
+				<div class="opcion"><a href="historicomes.php">Registrar</br>Abono</a></div>
+				<div class="opcion"><a href="historicoservicio.php">Historial de</br>Abonos</a></div></br>
 				<?php
 					if ( $_SESSION['TipoUser'] == 1)
 					echo "<div class=\"opcion\"><a href=\"registraruser.php\">Ingresar nuevo Usuario</a></div>";
 					?>
-					<div class="opcion"><a href="cambiarpass.php">Consultar Saldo</a></div>
+					<div class="opcion"><a href="cambiarpass.php">Consultar</br>Saldo</a></div>
 					<div class="opcion"><a href="cerrarsesion.php">Cerrar</br>Sesion</a></div></br>
 				</section>
 			<footer>
