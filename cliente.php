@@ -1,12 +1,14 @@
 <?php 
 	include('php/funciones.php'); 
 	$iduser = existe_sesion();
+	session_start();
+	establece_accion($_GET['accion']);
 		
 	$con = conectar();
 	
 	$consulta = "SELECT * FROM clientes";
 	$resultado = mysql_query($consulta, $con); 
-	$accion = $_GET['accion'];
+	
 	?>
 	<!DOCTYPE html>
 	<html lang = "es">
@@ -33,7 +35,7 @@
 				<section>
 					<form method="post" >
 						<div>
-						<?php echo $accion;?>
+						<?php echo $_SESSION['accion'];?>
 							<select name = "cliente"> 
 						<?php
 							
@@ -43,7 +45,11 @@
 									echo	"<option value =\"".$datos['_id']."\">". $datos['Nombre']." ".$datos['Apellido']."</option>" ;
 								}
 							}
-						?>						
+						?>	
+						</select>
+						</br>
+						<input type="submit" value="Seleccionar" onclick = "this.form.action = 'lol.php'"></input>
+						<input type="submit" value="Nuevo Cliente" onclick = "this.form.action = 'nuevo.php'"></input>
 						</div>	
 					</form>
 				</section>

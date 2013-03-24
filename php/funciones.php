@@ -30,4 +30,8 @@
 		
 	}
 	
+	function establece_accion($acc){
+	session_start();
+	$_SESSION['accion'] = $acc;
+	}
 ?>
