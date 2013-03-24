@@ -33,10 +33,10 @@
 					<h2>Inicio de Sesión</h2>
 				</header>
 				<section>
-					<form method="post" >
+					<form method="post" action="filtro.php?accion=<?php  echo $_GET['accion']?>">
 						<div>
-						<?php echo $_SESSION['accion'];?>
-							<select name = "cliente"> 
+						<?php //echo $_SESSION['accion'];?>
+							Cliente: <select name = "cliente"> 
 						<?php
 							
 							if($resultado){
@@ -48,7 +48,7 @@
 						?>	
 						</select>
 						</br>
-						<input type="submit" value="Seleccionar" onclick = "this.form.action = 'lol.php'"></input>
+						<input type="submit" value="Seleccionar" ></input>
 						<input type="submit" value="Nuevo Cliente" onclick = "this.form.action = 'nuevo.php'"></input>
 						</div>	
 					</form>

@@ -62,7 +62,7 @@
 		}// fin de if de verificacion de resultado
 		 else {
 		 echo $consulta;
-		 echo"No se pudo ingresar el Usuario";
+		 echo"No se pudo ingresar el Cliente";
 		 }
 		
 	}//fin de if de verificacion de isset

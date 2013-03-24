@@ -30,8 +30,36 @@
 		
 	}
 	
+	function busca_cliente($id){
+		$con = conectar();
+		$consulta4 = "Select * From clientes where _id =".$id;
+		$resultado4 = mysql_query($consulta4, $con);
+		$datos4 = mysql_fetch_assoc($resultado4);
+		$servicio = $datos4['Nombre'];
+		return $resultado4;
+	}
+	
+	
 	function establece_accion($acc){
 	session_start();
 	$_SESSION['accion'] = $acc;
+	}
+	
+		function establece_cliente($acc){
+	session_start();
+	$_SESSION['cliente'] = $acc;
+	}
+	
+	function da_accion(){
+	session_start();
+		$acc=$_SESSION['accion'];
+			return $acc;
+	}
+	
+	
+	function da_cliente(){
+	session_start();
+		$acc=$_SESSION['cliente'];
+			return $acc;
 	}
 ?>

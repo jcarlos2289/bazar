@@ -24,7 +24,7 @@
 		<div>
 			<header>
 				<h1>Sistema de Gestión de Pagos a Servicos Publicos </h1>	
-				<h2>Registro de nuevo usuario</h2>
+				<h2>Registro de Nuevo Cliente</h2>
 			</header>
 			<section>
 				<form method="post" action="clienteagregado.php"  >
@@ -34,8 +34,11 @@
 						<div class="conte"><div class="izq">Nombre: </div><div class="der"><input type="text" name="nombre"></input> </div></div>
 						<div class="conte"><div class="izq">Apellido: </div><div class="der"><input type="text" name="apellido"></input></div></div>
 						
-							</select></div></div>
-							</br><input type="submit" value="Guardar Cliente"></input>
+							</select>
+							</br>
+							<input type="submit" value="Guardar Cliente"></input>
+							</div>
+							
 					</div>
 				</form>
 			</section>
