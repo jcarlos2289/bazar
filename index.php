@@ -20,7 +20,7 @@
 				$_SESSION['usuario']=$usuario;
 				$_SESSION['id']=$id_sesion;
 				$_SESSION['iduser'] = $contra['_id'];
-				$_SESSION['TipoUser'] =$contra['idTipoUser']; 
+				//$_SESSION['TipoUser'] =$contra['idTipoUser']; 
 				//es una matriz
 				header('Location: acciones.php');
 			}
