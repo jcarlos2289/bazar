@@ -1,7 +1,7 @@
 <?php
 	function conectar(){
-		$id1 = mysql_connect('beta-app.mysql.eu1.frbit.com','beta-app', 'TL_1Rbuy1DE9lyst');
-		$ok = mysql_select_db('beta-app',$id1);
+		$id1 = mysql_connect('mysql.xunem.com','u835488897_cuent', '1855318553');
+		$ok = mysql_select_db('u835488897_cuentas',$id1);
 		return($id1);
 		
 	}
