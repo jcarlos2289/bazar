@@ -25,13 +25,13 @@
 		<div>
 			<header>
 				<h1>Sistema de Gestión de Pagos a Servicos Publicos </h1>	
-				<h2><?php echo $idcliente;?></h2>
+				<h2>Registrar Nueva Compra</h2>
 			</header>
 			<section>
 				<h2>Registro de Compra</h2>
 				<h2>Cliente: <?php echo $datoscliente['Nombre']." ".$datoscliente['Apellido'] ;?></h2>
 				</br>
-				<form method="post" action="">
+				<form method="post" action="compraagregada.php">
 					<div>
 				<div class="conte"><div class="izq">Saldo Actual: </div><div class="der"> 
 					<?php echo "B/. ".$datoscliente['Saldo'] ;?>
@@ -47,7 +47,7 @@
 						
 						
 						
-						<input type="submit" value="Guardar Registro"></input>
+						<input type="submit" value="Guardar Compra"></input>
 					</div>
 				</form>	
 				
