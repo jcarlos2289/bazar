@@ -36,7 +36,7 @@
 		$resultado4 = mysql_query($consulta4, $con);
 		$datos4 = mysql_fetch_assoc($resultado4);
 		$servicio = $datos4['Nombre'];
-		return $resultado4;
+		return $datos4;
 	}
 	
 	
@@ -45,7 +45,7 @@
 	$_SESSION['accion'] = $acc;
 	}
 	
-		function establece_cliente($acc){
+	function establece_cliente($acc){
 	session_start();
 	$_SESSION['cliente'] = $acc;
 	}
