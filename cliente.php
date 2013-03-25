@@ -2,8 +2,9 @@
 	include('php/funciones.php'); 
 	$iduser = existe_sesion();
 	session_start();
+	if(isset($_GET['accion'])){
 	establece_accion($_GET['accion']);
-		
+		}
 	$con = conectar();
 	
 	$consulta = "SELECT * FROM clientes";
