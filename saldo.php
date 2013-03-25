@@ -41,7 +41,7 @@
 				<section>
 					<div>
 						<table border = "1">
-						<tr><th>Saldo Actual</th><td><?php echo "B/. ".number_format($monto_total,2, '.', ' ') ;?></td></tr>
+						<tr><th>Saldo Actual</th><td><?php echo "B/. ".number_format($datoscliente['Saldo'] ,2, '.', ' ') ;?></td></tr>
 						</table>
 					</div>
 					</section>
@@ -52,7 +52,7 @@
 						if($resultado3 == true){
 						?>
 						<table border = "1">
-						    <tr><th>Fecha de Pago</th><th>Monto</th></tr>
+						    <tr><th>Fecha </th><th>Monto</th></tr>
 							<?php
 								
 								while($datos3 = mysql_fetch_assoc($resultado3))

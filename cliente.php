@@ -37,7 +37,7 @@
 					<form method="post" action="filtro.php?accion=<?php  echo $_GET['accion']?>">
 						<div>
 						<?php //echo $_SESSION['accion'];?>
-							Cliente: <select name = "cliente"> 
+							Cliente: 	</br><select name = "cliente"> 
 						<?php
 							
 							if($resultado){
@@ -52,7 +52,9 @@
 						</br>
 						<input type="submit" value="Seleccionar" ></input>
 						</br>
+							</br>
 						<input type="submit" value="Nuevo Cliente" onclick = "this.form.action = 'nuevo.php'"></input>
+							</br>
 						</div>	
 					</form>
 				</section>
