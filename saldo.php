@@ -1,14 +1,12 @@
 <?php 
 	include('php/funciones.php'); 
 	$iduser = existe_sesion();
+	$idcliente = da_cliente();
+	$datoscliente = busca_cliente($idcliente);
 	
-	$con = conectar();
-	
-	$consulta = "select * from servicios";
-	$resultado = mysql_query($consulta, $con); 
-	
-	$consulta2 = "select `año` from `registro` group by `año` order by año desc";
-	$resultado2 = mysql_query($consulta2, $con);
+	$consulta3 = "select * abonos  where idCliente = ".$idcliente ;
+	$resultado3 = mysql_query($consulta3, $con);
+	$monto_total = 0;
 	
 ?>
 <!DOCTYPE html>
@@ -16,7 +14,7 @@
 	
 	<head>
 		<meta charset="utf-8">
-		<title>Historico de Facturación por Servicio</title>
+		<title>Registro de Compra</title>
 		<link href="./css/estilos.css" rel="stylesheet" />
 		<!-- Compatibilidad con Elementos HTML5 -->
 		<!--[if IE]>
@@ -31,91 +29,52 @@
 		<div>
 			<header>
 				<h1>Sistema de Gestión de Pagos a Servicos Publicos </h1>	
-				<h2>Historial de Pagos por Servicios</h2>
+				<h2>Registrar Nueva Compra</h2>
 			</header>
 			<section>
+				<h2>Historial de Abonos de Compra</h2>
+				<h2>Cliente: <?php echo $datoscliente['Nombre']." ".$datoscliente['Apellido'] ;?></h2>
 				</br>
-				<form method="post" >
-					Servicio:<select name = "serv"> 
-						<?php
-							
-							if($resultado){
-								while($datos = mysql_fetch_assoc($resultado))
-								{
-									echo	"<option value =\"".$datos['_id']."\">". $datos['Nombre']."</option>" ;
-								}
-							}
-						?>
-						
-					</select>
-					
-					
-					</br>
-					Año: <select name = "año"> 
-						<?php
-							
-							if($resultado2){
-								while($datos2 = mysql_fetch_assoc($resultado2))
-								{
-									echo	"<option value =\"".$datos2['año']."\">". $datos2['año']."</option>" ;
-								}
-							}
-						?>
-						
-					</select>
-					</br>
-					<input type="submit" value="Ver"></input>
-					
-				</form>
-			</section>
-			
-			<?php 	
-				if(isset($_POST['serv']) && isset($_POST['año'])){
-					$consulta3 = "select mes, fechaPago, conRecibo, monto, pagoAtiempo from `registro` where idServicio = " .$_POST['serv']. " and `año` = ".$_POST['año'];
-					$resultado3 = mysql_query($consulta3, $con);
-					$monto_total = 0;
-					
-					$servicio = busca_servicio($_POST['serv']);
-					
-				?>
-				
+				<form method="post" action="">
+					<div>
+						<div class="conte"><div class="izq">Saldo Actual: </div><div class="der"> 
+							<?php echo "B/. ".$datoscliente['Saldo'] ;?>
+						</div></div>
+					</div>
+				</form>	
 				<section>
-					<h2>Historial para el Servicio de  <?php echo $servicio;?></h2>
-					<h2>Año <?php echo $_POST['año'];?></h2>
-						</br>
-						<?php
-							//mes,fechaPago,conRecibo,monto
-							if($resultado3 == true){
-							?>
-							<table border = "1">
-						    <tr><th>Mes</th><th>Fecha de Pago</th><th>Con Recibo</th><th>A Tiempo</th><th>Monto</th></tr>
+					<?php
+						
+						//mes,fechaPago,conRecibo,monto
+						if($resultado3 == true){
+						?>
+						<table border = "1">
+						    <tr><th>Fecha de Pago</th><th>Monto</th></tr>
 							<?php
-							
+								
 								while($datos3 = mysql_fetch_assoc($resultado3))
 								{
-									$recibo = ($datos3['conRecibo']=="1") ? "Si" : "No";
-		                            $atiempo = ($datos3['pagoAtiempo']=="1") ? "Si" : "No";
-									$clase = ($datos3['pagoAtiempo']=="1") ? " " : "  class=\"tarde\" ";
-									$fecha = date_create($datos3['fechaPago']);
-									echo	"<tr".$clase."><td>".$datos3['mes']."</td><td>".date_format($fecha, 'd-M-Y')."</td><td>".$recibo."</td><td>".$atiempo."</td><td>".number_format($datos3['monto'],2, '.', ' ')."</td></tr>";
+									$fecha = date_create($datos3['fecha']);
+									echo	"<tr><td>".date_format($fecha, 'd-M-Y')."</td><td>".number_format($datos3['monto'],2, '.', ' ')."</td></tr>";
 									$monto_total += $datos3['monto'];
 								}
-								?>
-									<tr><td colspan="4"><strong>Total</strong></td><td><strong><?php echo  number_format($monto_total,2, '.', ' '); ?></strong></td></tr>
-								</table>
-								<?php
-							}
-							else 
-							{echo "<h3> Sin Datos para mostar</h3>";}
-						?>
-						<a class="boton"  href="acciones.php">Menu Principal </a>
-					</section>
-				<?php
-				}
-				?>
-			
+							?>
+							<tr><td><strong>Total Abonado</strong></td><td><strong><?php echo  number_format($monto_total,2, '.', ' '); ?></strong></td></tr>
+						</table>
+						<?php
+						}
+						else 
+						{echo "<h3> Sin Datos para mostar</h3>";}
+					?>
+					
+					
+				</section>
+				
+				
+				<a class="boton"  href="acciones.php">Menu Principal</a>	
+			</section>
 			<footer>
-			<aside  > ©2013 Jose Carlos Rangel</aside>
+				<aside  > ©2013 Jose Carlos Rangel</aside>
 			</footer>
 		</div>
 	</body>
