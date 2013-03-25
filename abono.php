@@ -10,7 +10,7 @@
 	
 	<head>
 		<meta charset="utf-8">
-		<title>Registro de Compra</title>
+		<title>Registro de Abono</title>
 		<link href="./css/estilos.css" rel="stylesheet" />
 		<!-- Compatibilidad con Elementos HTML5 -->
 		<!--[if IE]>

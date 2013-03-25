@@ -24,7 +24,7 @@
 			
 			<head>
 				<meta charset="utf-8">
-				<title>Registar Nuevo usuario</title>
+				<title>Abono Registrado</title>
 				<!-- Compatibilidad con Elementos HTML5 -->
 				<!--[if IE]>
 					<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
@@ -73,7 +73,7 @@
 		}// fin de if de verificacion de resultado
 		else {
 			echo $consulta;
-			echo"No se pudo Registrar Compra";
+			echo"No se pudo Registrar Abono";
 		}
 		
 	}//fin de if de verificacion de isset

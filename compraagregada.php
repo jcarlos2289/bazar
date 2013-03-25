@@ -22,7 +22,7 @@
 	
 	<head>
 		<meta charset="utf-8">
-		<title>Registar Nuevo usuario</title>
+		<title>Compra Registrada</title>
 		<!-- Compatibilidad con Elementos HTML5 -->
 		<!--[if IE]>
 			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">

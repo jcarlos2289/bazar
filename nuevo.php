@@ -8,7 +8,7 @@
 	
 	<head>
 		<meta charset="utf-8">
-		<title>Registar Nuevo usuario</title>
+		<title>Registar Nuevo Cliente</title>
 		<link href="./css/estilos.css" rel="stylesheet" />
 		<!-- Compatibilidad con Elementos HTML5 -->
 		<!--[if IE]>

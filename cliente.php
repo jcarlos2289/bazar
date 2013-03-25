@@ -49,7 +49,9 @@
 						?>	
 						</select>
 						</br>
+						</br>
 						<input type="submit" value="Seleccionar" ></input>
+						</br>
 						<input type="submit" value="Nuevo Cliente" onclick = "this.form.action = 'nuevo.php'"></input>
 						</div>	
 					</form>

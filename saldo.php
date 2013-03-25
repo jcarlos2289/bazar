@@ -1,10 +1,13 @@
 <?php 
 	include('php/funciones.php'); 
+	
 	$iduser = existe_sesion();
 	$idcliente = da_cliente();
 	$datoscliente = busca_cliente($idcliente);
 	
-	$consulta3 = "select * abonos  where idCliente = ".$idcliente ;
+	$con = conectar();
+	
+	$consulta3 = "SELECT * FROM `abonos` WHERE idCliente =".$idcliente ;
 	$resultado3 = mysql_query($consulta3, $con);
 	$monto_total = 0;
 	
@@ -14,7 +17,7 @@
 	
 	<head>
 		<meta charset="utf-8">
-		<title>Registro de Compra</title>
+		<title>Consultar Saldo</title>
 		<link href="./css/estilos.css" rel="stylesheet" />
 		<!-- Compatibilidad con Elementos HTML5 -->
 		<!--[if IE]>
@@ -29,19 +32,19 @@
 		<div>
 			<header>
 				<h1>Sistema de Gestión de Pagos a Servicos Publicos </h1>	
-				<h2>Registrar Nueva Compra</h2>
+				<h2>Historial de Abonos</h2>
 			</header>
 			<section>
-				<h2>Historial de Abonos de Compra</h2>
+				<h2>Historial de Abonos </h2>
 				<h2>Cliente: <?php echo $datoscliente['Nombre']." ".$datoscliente['Apellido'] ;?></h2>
 				</br>
-				<form method="post" action="">
+				<section>
 					<div>
-						<div class="conte"><div class="izq">Saldo Actual: </div><div class="der"> 
-							<?php echo "B/. ".$datoscliente['Saldo'] ;?>
-						</div></div>
+						<table border = "1">
+						<tr><th>Saldo Actual</th><td><?php echo "B/. ".number_format($monto_total,2, '.', ' ') ;?></td></tr>
+						</table>
 					</div>
-				</form>	
+					</section>
 				<section>
 					<?php
 						
