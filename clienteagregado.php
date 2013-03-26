@@ -20,7 +20,7 @@
 	
 	<head>
 		<meta charset="utf-8">
-		<title>Registar Nuevo Cliente</title>
+		<title>Nuevo Cliente Agregado</title>
 		<!-- Compatibilidad con Elementos HTML5 -->
 		<!--[if IE]>
 			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
@@ -32,7 +32,7 @@
 	<body>
 		<div>
 			<header>
-				<h1>Sistema de Gestión de Pagos a Servicos Publicos </h1>	
+				<h1>Bazar Evy - Sistema de Compras y Abonos </h1>	
 				<h2>Nuevo Cliente Agregado</h2>
 			</header>
 			<section>

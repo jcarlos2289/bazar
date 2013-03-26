@@ -54,7 +54,7 @@
 		<body>
 			<div>
 				<header>
-					<h1>Sistema de Gestión de Pagos a Servicos Publicos </h1>	
+					<h1>Bazar Evy - Sistema de Compras y Abonos</h1>	
 					<h2>Inicio de Sesión</h2>
 				</header>
 				<section>

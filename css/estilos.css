@@ -11,7 +11,7 @@
 body{
 	width: 85%;
 	margin: 5% auto;
-	background-color:#6fbbd6;
+	background-color:#ddc3a1;
 }
 
 
@@ -29,7 +29,7 @@ header{
 	-o-border-radius:15px 15px 0em 0em;
 	-ms-border-radius:15px 15px 0em 0em;
 	border-radius:15px 15px 0em 0em;
-	background-color: #1F96FF;
+	background-color: #479a2c;
 	
 }
 
@@ -49,7 +49,7 @@ header h2 {
 	font-weight: normal;
 	font-style: italic;
 	text-align: left;
-	background-color: #075F91;
+	background-color: #2a5b1a;
 	color: #FFFFFF;
 	font-size: 25px;
 	line-height: 190%;
@@ -131,7 +131,7 @@ section h2{
 	-o-border-radius:2em;
 	-ms-border-radius:2em;
 	border-radius:2em;
-	background-color: #2d7b2c;
+	background-color: #9a692c;
 	color: rgba(0, 0, 0, 100);
 	
 	-ms-border-radius:1.0em;
@@ -144,6 +144,11 @@ section h2{
 	
 }
 
+.opcion  a:hover{
+	background-color: #9a692c;
+	color:black;
+	text-shadow: 0px 18px 2px #333333;
+	}
 
 div> a {
     display: table-cell;
@@ -206,7 +211,7 @@ table{
 th{
 	font-weight: bold;
 	text-align: center;
-	background-color: #25825A;
+	background-color: #4c8bcb;
 	color: #000;
 	font-size: 20px;
 	line-height: 100%;
@@ -217,7 +222,7 @@ th{
 
 td{
 	text-align: center;
-	background-color: #c8bb92;
+	background-color: #e3d9af;
 	color: #000;
 	font-size: 20px;
 	line-height: 100%;
@@ -236,7 +241,7 @@ footer{
 	line-height:200%;
 	height:40px;
 	text-align:center;
-	background-color: #075F91;
+	background-color: #2a5b1a;
 	-moz-border-radius: 0px 0px 15px 15px;
 	-o-border-radius: 0px 0px 15px 15px;
 	-ms-border-radius: 0px 0px 15px 15px;

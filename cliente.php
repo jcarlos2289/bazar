@@ -16,7 +16,7 @@
 		
 		<head>
 			<meta charset="utf-8">
-			<title>Index</title>
+			<title>Seleccione el Cliente</title>
 			<link href="./css/estilos.css" rel="stylesheet" />
 			<!-- Compatibilidad con Elementos HTML5 -->
 			<!--[if IE]>
@@ -30,8 +30,8 @@
 		<body>
 			<div>
 				<header>
-					<h1>Sistema de Gestión de Pagos a Servicos Publicos </h1>	
-					<h2>Inicio de Sesión</h2>
+					<h1>Bazar Evy - Sistema de Compras y Abonos </h1>	
+					<h2>Seleccione el Cliente</h2>
 				</header>
 				<section>
 					<form method="post" action="filtro.php?accion=<?php  echo $_GET['accion']?>">

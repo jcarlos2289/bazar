@@ -31,8 +31,8 @@
 	<body>
 		<div>
 			<header>
-				<h1>Sistema de Gestión de Pagos a Servicos Publicos </h1>	
-				<h2>Historial de Abonos</h2>
+				<h1>Bazar Evy - Sistema de Compras y Abonos </h1>	
+				<h2>Saldo e Historial de Abonos</h2>
 			</header>
 			<section>
 				<h2>Historial de Abonos </h2>

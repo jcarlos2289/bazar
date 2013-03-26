@@ -23,7 +23,7 @@
 	<body>
 		<div>
 			<header>
-				<h1>Sistema de Gestión de Pagos a Servicos Publicos </h1>	
+				<h1>Bazar Evy - Sistema de Compras y Abonos </h1>	
 				<h2>Registro de Nuevo Cliente</h2>
 			</header>
 			<section>

@@ -22,16 +22,13 @@
 	<body>
 		<div>
 			<header>
-				<h1>Sistema de Gestión de Pagos a Servicos Publicos </h1>	
+				<h1>Bazar Evy - Sistema de Compras y Abonos </h1>	
 				<h2>Acciones permitidas</h2>
 			</header>
 			<section >
 				<div class="opcion"><a href="cliente.php?accion=1">Registrar</br>Compra</a></div>
 				<div class="opcion"><a href="cliente.php?accion=2">Registrar</br>Abono</a></div>
-					<?php
-					if ( $_SESSION['TipoUser'] == 1)
-					echo "<div class=\"opcion\"><a href=\"registraruser.php\">Ingresar nuevo Usuario</a></div>";
-					?>
+					
 					<div class="opcion"><a href="cliente.php?accion=3">Consultar</br>Saldo</a></div>
 					<div class="opcion"><a href="cerrarsesion.php">Cerrar</br>Sesion</a></div></br>
 				</section>
