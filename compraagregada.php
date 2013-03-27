@@ -10,12 +10,12 @@
 	
 	$con = conectar();
 	
-	$consulta = "UPDATE  clientes SET  `Saldo` =  '".$saldo_nuevo."',`FechaInicial` =  '".$_POST['fecha']."' WHERE  `clientes`.`_id` =".$idcliente;
-	
-	$resultado = mysql_query($consulta, $con);
+	$consulta = "INSERT INTO  `compras` (`_id` , `idCliente` , `monto` , `fecha`) VALUES 
+		(NULL ,  '".$idcliente."',  '".$monto."',  '".$_POST['fecha']."')";
 	
 	if ($resultado == TRUE){
-		
+		$consulta2 = "UPDATE  clientes SET  `Saldo` =  '".$saldo_nuevo."' WHERE  `clientes`.`_id` =".$idcliente;
+		$resultado2 = mysql_query($consulta2, $con);
 ?>
 <!DOCTYPE html>
 <html lang = "es">
@@ -40,15 +40,21 @@
 			<section>
 					<h2>Registro de Compra</h2>
 				    <h2>Cliente: <?php echo $datoscliente['Nombre']." ".$datoscliente['Apellido'] ;?></h2>
+					
+					
 					<h2>Detalles de Compra</h2>
 					
 					</br>
+					<?php if($resultado2 == TRUE){ ?>
 					<table border ="1">
 					<tr><th>Saldo Anterior</th> <td> <?php echo $datoscliente['Saldo'];?></td></tr>
 					<tr><th>Nueva Compra</th> <td> <?php echo $monto;?></td></tr>
 					<tr><th>Nuevo Saldo</th> <td> <?php echo $saldo_nuevo	;?></td></tr>
 				
 					</table>
+					<?php 
+							}else{
+							echo"Nuevo Saldo no Actualizado"; }?>
 					</br>
 					
 					</br>

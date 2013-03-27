@@ -6,8 +6,8 @@
    
 	$con = conectar();
 	
-	$consulta = "INSERT INTO clientes 	(Nombre, Apellido, Saldo, FechaInicial) VALUES 
-	('".$_POST['nombre']."', '".$_POST['apellido']."', 0, '". date('Y-m-d')."')";
+	$consulta = "INSERT INTO clientes 	(Nombre, Apellido, Saldo) VALUES 
+	('".$_POST['nombre']."', '".$_POST['apellido']."', 0)";
 	
 	$resultado = mysql_query($consulta, $con);
 	
