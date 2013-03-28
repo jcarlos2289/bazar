@@ -12,6 +12,7 @@
 	
 	$consulta = "INSERT INTO  `compras` (`_id` , `idCliente` , `monto` , `fecha`) VALUES 
 		(NULL ,  '".$idcliente."',  '".$monto."',  '".$_POST['fecha']."')";
+		$resultado = mysql_query($consulta, $con);
 	
 	if ($resultado == TRUE){
 		$consulta2 = "UPDATE  clientes SET  `Saldo` =  '".$saldo_nuevo."' WHERE  `clientes`.`_id` =".$idcliente;
@@ -73,7 +74,7 @@
 	<?php 
 		}// fin de if de verificacion de resultado
 		 else {
-		 echo $consulta;
+		// echo $consulta;
 		 echo"No se pudo Registrar Compra";
 		 }
 		
