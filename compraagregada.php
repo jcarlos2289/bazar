@@ -50,7 +50,7 @@
 					<?php if($resultado2 == TRUE){ ?>
 					<table border ="1">
 					<tr><th>Saldo Anterior</th> <td> <?php echo number_format($datoscliente['Saldo'] ,2, '.', ' ');?></td></tr>
-					<tr><th>Nueva Compra</th> <td> <?php echo number_format($monto; ,2, '.', ' ')?></td></tr>
+					<tr><th>Nueva Compra</th> <td> <?php echo number_format($monto ,2, '.', ' ');?></td></tr>
 					<tr><th>Nuevo Saldo</th> <td> <strong><?php echo number_format($saldo_nuevo ,2, '.', ' ')	;?></strong></td></tr>
 				
 					</table>
