@@ -40,7 +40,7 @@
 				<h2>Saldo e Historial de Abonos</h2>
 			</header>
 			<section>
-				<h2>Historial de Abonos </h2>
+				<h2>Historial de Abonos al <?php echo date('j/M/Y') ;?></h2>
 				<h2>Cliente: <?php echo $datoscliente['Nombre']." ".$datoscliente['Apellido'] ;?></h2>
 				</br>
 				<section>
@@ -69,7 +69,7 @@
 									$monto_total_compras += $datos3['monto'];
 								}
 							?>
-							<tr><td><strong>Total Comprado</strong></td><td><strong><?php echo  number_format($monto_total_compras,2, '.', ' '); ?></strong></td></tr>
+							<tr><th><strong>Total Comprado</strong></th><th><strong><?php echo  number_format($monto_total_compras,2, '.', ' '); ?></strong></th></tr>
 						</table>
 						<?php
 						}
@@ -96,7 +96,7 @@
 									$monto_total_abonos += $datos4['monto'];
 								}
 							?>
-							<tr><td><strong>Total Abonado</strong></td><td><strong><?php echo  number_format($monto_total_abonos,2, '.', ' '); ?></strong></td></tr>
+							<tr><th><strong>Total Abonado</strong></th><th><strong><?php echo  number_format($monto_total_abonos,2, '.', ' '); ?></strong></th></tr>
 						</table>
 						<?php
 						}
