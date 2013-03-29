@@ -32,7 +32,8 @@
 				<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
 				</script>
 			<![endif]-->
-			<link href="./css/estilos.css" rel="stylesheet" />
+			<link href="./css/estilos.css" rel="stylesheet" media="screen" />
+		<link href="./css/imprimir.css" rel="stylesheet" media="print" />
 		</head>
 		
 		<body>
@@ -58,7 +59,7 @@
 					
 				</section>
 				<footer>
-					<aside > ©2013 Jose Carlos Rangel</aside>
+					<aside > Â©2013 Jose Carlos Rangel</aside>
 				</footer>
 				
 			</div>

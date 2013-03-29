@@ -22,7 +22,8 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Consultar Saldo</title>
-		<link href="./css/estilos.css" rel="stylesheet" />
+		<link href="./css/estilos.css" rel="stylesheet" media="screen"/>
+		<link href="./css/imprimir.css" rel="stylesheet" media="print" />
 		<!-- Compatibilidad con Elementos HTML5 -->
 		<!--[if IE]>
 			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
@@ -106,8 +107,9 @@
 					
 				</section>
 			</section>
-				
+				<a class="boton"  href="listasaldos.php">Clientes con Saldo</a>	
 				<a class="boton"  href="acciones.php">Menu Principal</a>	
+				
 			</section>
 			<footer>
 				<aside  > ©2013 Jose Carlos Rangel</aside>

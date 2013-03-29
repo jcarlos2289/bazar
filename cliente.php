@@ -17,7 +17,8 @@
 		<head>
 			<meta charset="utf-8">
 			<title>Seleccione el Cliente</title>
-			<link href="./css/estilos.css" rel="stylesheet" />
+		<link href="./css/estilos.css" rel="stylesheet" media="screen" />
+		<link href="./css/imprimir.css" rel="stylesheet" media="print" />
 			<!-- Compatibilidad con Elementos HTML5 -->
 			<!--[if IE]>
 				<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">

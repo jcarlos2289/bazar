@@ -6,12 +6,13 @@
 	padding:0;
 	/*outline: 1px dotted red;*/
 	font-family:Segoe UI, sans serif;
+	
 }
 
 body{
-	width: 85%;
-	margin: 5% auto;
-	background-color:#ddc3a1;
+	width: 100%;
+	margin: 0 auto;
+	background-color:#fff;
 }
 
 
@@ -30,7 +31,8 @@ header{
 	-ms-border-radius:15px 15px 0em 0em;
 	border-radius:15px 15px 0em 0em;
 	background-color: #479a2c;
-	
+	visibility:hidden; 
+	display: none; 
 }
 
 header h1 {
@@ -41,7 +43,8 @@ header h1 {
 	line-height: 190%;
 	text-shadow: -5px 1px 5px #0B0833;
 	padding: 3px  15px;
-	
+	visibility:hidden; 
+    display: none; 
 }
 
 
@@ -60,7 +63,7 @@ header h2 {
 }
 
 section {
-	background-color: #c5cbcd; 
+	background-color: #fff; 
 	text-align:center;
 	padding:10px;
 	
@@ -75,11 +78,12 @@ section h2{
 	font-weight: normal;
 	text-align: center;
 	/*background-color: #aaa;*/
-	color: #727272;
-	
-	font-size: 30.0px;
-	line-height: 145%;
-	text-shadow: 3.0px 3.0px 3.0px #fff;
+	color: #000;
+	font-size: 20.0px;
+	line-height: 100%;
+	/*text-shadow: 3.0px 3.0px 3.0px #fff;*/
+	margin:0 auto;
+	padding: 2px;
 }
 
 .der{
@@ -119,6 +123,7 @@ section h2{
     -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.3); 
     -moz-box-shadow: 0 1px 1px rgba(0,0,0,0.3); 
     box-shadow: 0 1px 1px rgba(0,0,0,0.3); 
+	visibility:hidden; 
 }
 .opcion { 
 	-webkit-box-shadow:9px 2px 2px 2px #333333;
@@ -205,7 +210,8 @@ select, input{
 
 table{
 	margin: auto;
-	width: 60%;
+	width: 80%;
+	font-size:9px;
 }
 
 .tabladoble{
@@ -234,23 +240,23 @@ table{
 th{
 	font-weight: bold;
 	text-align: center;
-	background-color: #4c8bcb;
+	background-color: #fff;
 	color: #000;
-	font-size: 20px;
+	font-size: 12px;
 	line-height: 100%;
-	width:50%;
-	padding:10px 0px;
+	width:70%;
+	padding:4px 0px;
 }
 
 
 td{
 	text-align: center;
-	background-color: #e3d9af;
+	background-color: #fff;
 	color: #000;
-	font-size: 20px;
+	font-size: 12px;
 	line-height: 100%;
-	width:50%;
-	padding:10px 0px;
+	width:70%;
+	padding:4px 0px;
 	
 }
 
@@ -269,17 +275,19 @@ footer{
 	-o-border-radius: 0px 0px 15px 15px;
 	-ms-border-radius: 0px 0px 15px 15px;
 	border-radius: 0px 0px 15px 15px;
-	
-	
+	visibility:hidden; 
+	display: none; 
 }
 
 footer div{
 	padding: 5px;
+	
 }
 
 footer img {
 	width:20px;
 	height:20px;
+	
 }
 
 .footer-segment {
