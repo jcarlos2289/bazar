@@ -7,13 +7,9 @@
 	
 	$con = conectar();
 	
-	$consulta3 = "SELECT * FROM `compras` WHERE idCliente =".$idcliente ;
+	$consulta3 = "SELECT * FROM `abonos` WHERE idCliente =".$idcliente ;
 	$resultado3 = mysql_query($consulta3, $con);
-	$monto_total_compras = 0;
-	
-	$consulta4 = "SELECT * FROM `abonos` WHERE idCliente =".$idcliente ;
-	$resultado4 = mysql_query($consulta4, $con);
-	$monto_total_abonos = 0;
+	$monto_total = 0;
 	
 ?>
 <!DOCTYPE html>
@@ -45,19 +41,17 @@
 				<section>
 					<div>
 						<table border = "1">
-							<tr><th>Saldo Actual</th><td><?php echo "B/. ".number_format($datoscliente['Saldo'] ,2, '.', ' ') ;?></td></tr>
+						<tr><th>Saldo Actual</th><td><?php echo "B/. ".number_format($datoscliente['Saldo'] ,2, '.', ' ') ;?></td></tr>
 						</table>
 					</div>
-				</section>
-				<section class="tablas">
-				<section class="tabladoble">
+					</section>
+				<section>
 					<?php
 						
 						//mes,fechaPago,conRecibo,monto
 						if($resultado3 == true){
 						?>
-						<h3>Compras</h3>
-						<table border = "1"  class="tabdo">
+						<table border = "1">
 						    <tr><th>Fecha </th><th>Monto</th></tr>
 							<?php
 								
@@ -65,37 +59,10 @@
 								{
 									$fecha = date_create($datos3['fecha']);
 									echo	"<tr><td>".date_format($fecha, 'd-M-Y')."</td><td>".number_format($datos3['monto'],2, '.', ' ')."</td></tr>";
-									$monto_total_compras += $datos3['monto'];
+									$monto_total += $datos3['monto'];
 								}
 							?>
-							<tr><td><strong>Total Comprado</strong></td><td><strong><?php echo  number_format($monto_total_compras,2, '.', ' '); ?></strong></td></tr>
-						</table>
-						<?php
-						}
-						else 
-						{echo "<h3> Sin Datos para mostar</h3>";}
-					?>
-					</section>
-					
-					<section class="tabladoble">
-					<?php
-						
-						//mes,fechaPago,conRecibo,monto
-						if($resultado4 == true){
-						?>
-						<h3>Abonos</h3>
-						<table border = "1" class="tabdo">
-						    <tr><th>Fecha </th><th>Monto</th></tr>
-							<?php
-								
-								while($datos4 = mysql_fetch_assoc($resultado4))
-								{
-									$fecha = date_create($datos4['fecha']);
-									echo	"<tr><td>".date_format($fecha, 'd-M-Y')."</td><td>".number_format($datos4['monto'],2, '.', ' ')."</td></tr>";
-									$monto_total_abonos += $datos4['monto'];
-								}
-							?>
-							<tr><td><strong>Total Abonado</strong></td><td><strong><?php echo  number_format($monto_total_abonos,2, '.', ' '); ?></strong></td></tr>
+							<tr><td><strong>Total Abonado</strong></td><td><strong><?php echo  number_format($monto_total,2, '.', ' '); ?></strong></td></tr>
 						</table>
 						<?php
 						}
@@ -105,7 +72,7 @@
 					
 					
 				</section>
-			</section>
+				
 				
 				<a class="boton"  href="acciones.php">Menu Principal</a>	
 			</section>

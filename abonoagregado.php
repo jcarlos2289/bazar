@@ -46,39 +46,39 @@
 						
 						</br>
 						<?php if($resultado2 == TRUE){ ?>
-						<table border ="1">
-							<tr><th>Saldo Anterior</th> <td> <?php echo $datoscliente['Saldo'];?></td></tr>
-							<tr><th>Nueva Abono</th> <td> <?php echo $monto;?></td></tr>
-							<tr><th>Nuevo Saldo</th> <td> <?php echo $saldo_nuevo	;?></td></tr>
-						</table>
-						<?php 
-							}else{
+							<table border ="1">
+								<tr><th>Saldo Anterior</th> <td> <?php echo number_format($datoscliente['Saldo'] ,2, '.', ' ');?></td></tr>
+								<tr><th>Nueva Compra</th> <td> <?php echo number_format($monto; ,2, '.', ' ')?></td></tr>
+								<tr><th>Nuevo Saldo</th> <td> <strong><?php echo number_format($saldo_nuevo ,2, '.', ' ')	;?></strong></td></tr>
+							</table>
+							<?php 
+								}else{
 							echo"Nuevo Saldo no Actualizado"; }?>
-						</br>
-						
-						</br>
-						
-						<a class="boton" href="acciones.php">Menu Principal</a>
-						
+							</br>
+							
+							</br>
+							
+							<a class="boton" href="acciones.php">Menu Principal</a>
+							
 					</section>
 					<footer>
-						<aside > ©2013 Jose Carlos Rangel</aside>
+					<aside > ©2013 Jose Carlos Rangel</aside>
 					</footer>
 					
-				</div>
-			</body>
-		</html>
-		
-		<?php 
-		}// fin de if de verificacion de resultado
-		else {
-			echo $consulta;
-			echo"No se pudo Registrar Abono";
-		}
-		
-	}//fin de if de verificacion de isset
-	else{
-		echo"Debe llenar todos los campos";
-	}
-	
-?>	
+					</div>
+					</body>
+					</html>
+					
+					<?php 
+					}// fin de if de verificacion de resultado
+					else {
+					echo $consulta;
+					echo"No se pudo Registrar Abono";
+					}
+					
+					}//fin de if de verificacion de isset
+					else{
+					echo"Debe llenar todos los campos";
+					}
+					
+					?>						

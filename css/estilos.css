@@ -4,7 +4,7 @@
 *{
 	margin: 0;
 	padding:0;
-	/*outline: 1px dotted red;*/
+	outline: 1px dotted red;
 	font-family:Segoe UI, sans serif;
 }
 
@@ -208,6 +208,29 @@ table{
 	width: 60%;
 }
 
+.tabladoble{
+	/*width:50%;
+	display:inline;
+	float:left;
+	text-align:center;*/
+	
+	width:50%;
+	display:table-cell;
+	float:center;
+	
+	}
+	
+.tabdo{
+	width:80%;
+	}
+
+	.tablas{
+		display:inline-table;
+		margin:0 auto;
+		width:90%;
+		}
+	
+	
 th{
 	font-weight: bold;
 	text-align: center;
