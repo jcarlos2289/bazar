@@ -39,10 +39,11 @@
 	<html lang = "es">
 		
 		<head>
-			<meta charset="utf-8">
+			<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
 			<title>Index</title>
 			<link href="./css/estilos.css" rel="stylesheet" media="screen" />
 		<link href="./css/imprimir.css" rel="stylesheet" media="print" />
+		<link href="./css/movil.css" rel="stylesheet" media="handheld , only screen and (max-device-width: 480px)" />
 			<!-- Compatibilidad con Elementos HTML5 -->
 			<!--[if IE]>
 				<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">

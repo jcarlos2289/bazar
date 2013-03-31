@@ -9,10 +9,11 @@
 <html lang = "es">
 	
 	<head>
-		<meta charset="utf-8">
+		<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
 		<title>Registro de Abono</title>
 		<link href="./css/estilos.css" rel="stylesheet" media="screen" />
 		<link href="./css/imprimir.css" rel="stylesheet" media="print" />
+		<link href="./css/movil.css" rel="stylesheet" media="handheld , only screen and (max-device-width: 480px)" />
 		<!-- Compatibilidad con Elementos HTML5 -->
 		<!--[if IE]>
 			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
@@ -39,7 +40,7 @@
 				</div></div>
 				
 						<div class="conte"><div class="izq">Fecha: </div><div class="der">
-							<input type="date"  name="fecha" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" required placeholder="ej. 2012-05-26"></input>
+							<input type="date"  name="fecha" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" required placeholder="ej. 2012-05-26" value="<?php echo date('Y-m-j') ;?>"></input>
 						</div></div>
 						
 						<div class="conte"><div class="izq">Abono: </div><div class="der"><input type="text" name="monto"></input>
