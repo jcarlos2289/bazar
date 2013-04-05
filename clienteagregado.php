@@ -38,7 +38,7 @@
 				<h2>Nuevo Cliente Agregado</h2>
 			</header>
 			<section>
-					<h2>Datos del nuevo usuario</h2>
+					<h2>Datos del nuevo cliente</h2>
 					</br>
 					<table border ="1">
 					<tr><th>Nombre</th> <td> <?php echo $_POST['nombre'];?></td></tr>

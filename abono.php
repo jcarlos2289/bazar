@@ -40,7 +40,7 @@
 				</div></div>
 				
 						<div class="conte"><div class="izq">Fecha: </div><div class="der">
-							<input type="date"  name="fecha" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" required placeholder="ej. 2012-05-26" value="<?php echo date('Y-m-j') ;?>"></input>
+							<input type="date"  name="fecha" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" required placeholder="ej. 2012-05-26" value="<?php echo date('Y-m-d') ;?>"></input>
 						</div></div>
 						
 						<div class="conte"><div class="izq">Abono: </div><div class="der"><input type="text" name="monto"></input>

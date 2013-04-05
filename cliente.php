@@ -7,7 +7,7 @@
 		}
 	$con = conectar();
 	
-	$consulta = "SELECT * FROM clientes";
+	$consulta = "SELECT * FROM clientes order By Nombre Asc";
 	$resultado = mysql_query($consulta, $con); 
 	
 	?>

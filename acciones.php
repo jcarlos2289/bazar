@@ -32,6 +32,7 @@
 				<div class="opcion"><a href="cliente.php?accion=2">Registrar</br>Abono</a></div>
 					
 					<div class="opcion"><a href="cliente.php?accion=3">Consultar</br>Saldo</a></div>
+					<div class="opcion"><a href="cliente.php?accion=4">Editar</br>Compras</a></div>
 					<div class="opcion"><a href="listasaldos.php">Lista de</br>Saldos</a></div>
 					<div class="opcion"><a href="balance.php">Consultar</br>Balances</a></div>
 					<div class="opcion"><a href="cerrarsesion.php">Cerrar</br>Sesion</a></div></br>

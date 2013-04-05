@@ -22,6 +22,10 @@
 	//echo "6".da_cliente();
      header('Location: saldo.php') ;
         break;
+		case 4:
+	//echo "6".da_cliente();
+     header('Location: editcompra.php') ;
+        break;
 		 default:
        header('Location: acciones.php') ;
 }

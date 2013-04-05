@@ -2,11 +2,12 @@
 	include('php/funciones.php'); 
 	
 	$iduser = existe_sesion();
-	
+	$idcliente = da_cliente();
+	$datoscliente = busca_cliente($idcliente);
 	
 	$con = conectar();
 	
-	$consulta3 = "SELECT * FROM `clientes` WHERE saldo >0 order By Nombre Asc";
+	$consulta3 = "SELECT * FROM `compras` WHERE idCliente =".$idcliente ;
 	$resultado3 = mysql_query($consulta3, $con);
 	$monto_total = 0;
 	
@@ -15,13 +16,9 @@
 <html lang = "es">
 	
 	<head>
-		<!-- name="viewport" content="width=device-width, initial-scale=1"-->
-		<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
-		<title>Clientes con Saldo </title>
-		<link href="./css/estilos.css" rel="stylesheet" media="screen" />
-		<link href="./css/imprimir.css" rel="stylesheet" media="print" /> 
-		<link href="./css/movil.css" rel="stylesheet" media="handheld , only screen and (max-device-width: 480px)" />
-		
+		<meta charset="utf-8">
+		<title> Edición de Compra</title>
+		<link href="./css/estilos.css" rel="stylesheet" />
 		<!-- Compatibilidad con Elementos HTML5 -->
 		<!--[if IE]>
 			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
@@ -35,13 +32,19 @@
 		<div>
 			<header>
 				<h1>Bazar Evy - Sistema de Compras y Abonos </h1>	
-				<h2>Lista de Clientes con Saldo</h2>
+				<h2>Editar Compras</h2>
 			</header>
 			<section>
-				<h2>Clientes con Saldo al <?php echo date('j/M/Y') ;?></h2>
-				
+				<h2>Compras </h2>
+				<h2>Cliente: <?php echo $datoscliente['Nombre']." ".$datoscliente['Apellido'] ;?></h2>
 				</br>
-				
+				<section>
+					<div>
+						<table border = "1">
+						<tr><th>Saldo Actual</th><td><?php echo "B/. ".number_format($datoscliente['Saldo'] ,2, '.', ' ') ;?></td></tr>
+						</table>
+					</div>
+					</section>
 				<section>
 					<?php
 						
@@ -49,16 +52,17 @@
 						if($resultado3 == true){
 						?>
 						<table border = "1">
-						    <tr><th>Nombre </th><th>Saldo</th></tr>
+						    <tr><th>Fecha </th><th>Monto</th><th>Acción </th></tr>
 							<?php
 								
 								while($datos3 = mysql_fetch_assoc($resultado3))
 								{
-									echo	"<tr><td><a href=filtrosaldo.php?xh25=\"".$datos3['_id']."\" title=\"Ver Historial\">".$datos3['Nombre']." ".$datos3['Apellido']."</a></td><td>".number_format($datos3['Saldo'],2, '.', ' ')."</td></tr>";
-									$monto_total += $datos3['Saldo'];
+									$fecha = date_create($datos3['fecha']);
+									echo	"<tr><td>".date_format($fecha, 'd-M-Y')."</td><td>".number_format($datos3['monto'],2, '.', ' ')."</td><td><a href=\"compramas.php?id=". $datos3['_id']."\">+</a>  <a href=\"compramenos.php?id=".$datos3['_id']."\">-</a></td></tr>";
+									$monto_total += $datos3['monto'];
 								}
 							?>
-							<tr><th><strong>Total Credito</strong></th><th><strong><?php echo  number_format($monto_total,2, '.', ' '); ?></strong></th></tr>
+							<tr><td><strong>Total Comprado</strong></td><td><strong><?php echo  number_format($monto_total,2, '.', ' '); ?></strong></td><td></td></tr>
 						</table>
 						<?php
 						}

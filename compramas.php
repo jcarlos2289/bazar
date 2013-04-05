@@ -1,27 +1,26 @@
 <?php 
 	include('php/funciones.php'); 
-	
 	$iduser = existe_sesion();
-	
+	$idcliente = da_cliente();
+	$datoscliente = busca_cliente($idcliente);
+	$idcompra = $_GET['id'];
 	
 	$con = conectar();
 	
-	$consulta3 = "SELECT * FROM `clientes` WHERE saldo >0 order By Nombre Asc";
+	$consulta3 = "SELECT * FROM `compras` WHERE _id =".$idcompra ;
 	$resultado3 = mysql_query($consulta3, $con);
-	$monto_total = 0;
+	$datos3 = mysql_fetch_assoc($resultado3);
 	
 ?>
 <!DOCTYPE html>
 <html lang = "es">
 	
 	<head>
-		<!-- name="viewport" content="width=device-width, initial-scale=1"-->
 		<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
-		<title>Clientes con Saldo </title>
+		<title> Edición de Compra</title>
 		<link href="./css/estilos.css" rel="stylesheet" media="screen" />
 		<link href="./css/imprimir.css" rel="stylesheet" media="print" /> 
 		<link href="./css/movil.css" rel="stylesheet" media="handheld , only screen and (max-device-width: 480px)" />
-		
 		<!-- Compatibilidad con Elementos HTML5 -->
 		<!--[if IE]>
 			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
@@ -35,40 +34,33 @@
 		<div>
 			<header>
 				<h1>Bazar Evy - Sistema de Compras y Abonos </h1>	
-				<h2>Lista de Clientes con Saldo</h2>
+				<h2>Editar Compras</h2>
 			</header>
 			<section>
-				<h2>Clientes con Saldo al <?php echo date('j/M/Y') ;?></h2>
-				
+				<h2>Detalles de Compra</h2>
+				<h2>Cliente: <?php echo $datoscliente['Nombre']." ".$datoscliente['Apellido'] ;?></h2>
 				</br>
+				<form method="post" action="compramasagregada.php?id=<?php echo $datos3['_id']; ?> ">
+					<div>
+				<div class="conte"><div class="izq">Saldo Actual: </div><div class="der"> 
+					<?php echo "B/. ".$datoscliente['Saldo'] ;?>
+				</div></div>
 				
-				<section>
-					<?php
+						<div class="conte"><div class="izq">Fecha: </div><div class="der">
+							<?php echo $datos3['fecha'] ;?>
+						</div></div>
+						<div class="conte"><div class="izq">Monto Actual: </div><div class="der">
+							<?php echo $datos3['monto'] ;?>
+						</div></div>
+						<div class="conte"><div class="izq">Adicionar: </div><div class="der"><input type="text" name="monto"></input>
+						</div></div>
 						
-						//mes,fechaPago,conRecibo,monto
-						if($resultado3 == true){
-						?>
-						<table border = "1">
-						    <tr><th>Nombre </th><th>Saldo</th></tr>
-							<?php
-								
-								while($datos3 = mysql_fetch_assoc($resultado3))
-								{
-									echo	"<tr><td><a href=filtrosaldo.php?xh25=\"".$datos3['_id']."\" title=\"Ver Historial\">".$datos3['Nombre']." ".$datos3['Apellido']."</a></td><td>".number_format($datos3['Saldo'],2, '.', ' ')."</td></tr>";
-									$monto_total += $datos3['Saldo'];
-								}
-							?>
-							<tr><th><strong>Total Credito</strong></th><th><strong><?php echo  number_format($monto_total,2, '.', ' '); ?></strong></th></tr>
-						</table>
-						<?php
-						}
-						else 
-						{echo "<h3> Sin Datos para mostar</h3>";}
-					?>
-					
-					
-				</section>
-				
+						
+						
+						
+						<input type="submit" value="Guardar Compra"></input>
+					</div>
+				</form>	
 				
 				<a class="boton"  href="acciones.php">Menu Principal</a>	
 			</section>
